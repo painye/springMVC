@@ -113,7 +113,7 @@ public class MyController {
     }
 
     @ResponseBody  //当想要返回的String是数据时需要添加该注解，如果String返回的是视图的话，不需要该注解
-    @RequestMapping(value = "/returnStringObject.do", produces = "text/plain;charset=utf-8")
+    @RequestMapping(value = "/returnStringObject.do", produces = "text/plain;charset=utf-8")//返回值是字符串进行输出时，不会经过过滤器所以他的编码方式并不是utf-8还得重新设置
     public String doReturnString(){
         return "你好，世界";
     }
