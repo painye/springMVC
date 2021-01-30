@@ -17,21 +17,22 @@
                 //alert("click");
                $.ajax({
                    //提交给后台的地址
-                   url: "my/returnStudentList.do",
+                   url: "my/returnStringObject.do",
                    //提交携带的信息
                    data:{name:"张三", age:20},
                    //提交的方式
                    type:"post",
                    //提交数据的类型
-                   dataType: "json",
+                   //dataType: "json",
                    //回调函数， resp后台携带的数据
                    success:function (resp) {
                        //resp从服务器端返回的是一个json格式的字符串{"name": 张三, "age":20}
                        //jquer会把字符串转换为json对象赋值给resp；
                        //alert(resp.name+"   "+resp.age)
-                       $.each(resp, function (i, n) {
-                            alert(n.name+"  "+n.age)
-                       })
+                       // $.each(resp, function (i, n) {
+                       //      alert(n.name+"  "+n.age)
+                       // })
+                       alert(resp)
                    }
 
                })
