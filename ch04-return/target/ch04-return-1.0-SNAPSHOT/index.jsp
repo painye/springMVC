@@ -28,7 +28,10 @@
                    success:function (resp) {
                        //resp从服务器端返回的是一个json格式的字符串{"name": 张三, "age":20}
                        //jquer会把字符串转换为json对象赋值给resp；
-                        alert(resp.name+"   "+resp.age)
+                       //alert(resp.name+"   "+resp.age)
+                       $.each(resp, function (i, n) {
+                            alert(n.name+"  "+n.age)
+                       })
                    }
 
                })

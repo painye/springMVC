@@ -111,4 +111,10 @@ public class MyController {
 
         //输出数据，响应json的请求，将转换后的json对象上传至浏览器
     }
+
+    @ResponseBody  //当想要返回的String是数据时需要添加该注解，如果String返回的是视图的话，不需要该注解
+    @RequestMapping(value = "/returnStringObject.do", produces = "text/plain;charset=utf-8")
+    public String doReturnString(){
+        return "你好，世界";
+    }
 }
