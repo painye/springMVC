@@ -27,7 +27,7 @@ public class MyController {
      *      Model:数据，请求处理，显示用户的数据
      *      View:视图，比如jsp等等
      */
-    @RequestMapping(value = {"/some.do", "/first.do"}, method = RequestMethod.GET)//添加method属性，限制必须是get方法
+    @RequestMapping(value = {"/some.do", "/first.do"})//添加method属性，限制必须是get方法
     public ModelAndView doSome(){
         //处理some.do的请求
 
@@ -37,18 +37,8 @@ public class MyController {
         mv.addObject("fun", "执行doSome");
 
         //指定视图,指定视图的完整路径
-        mv.setViewName("show");//在视图解析器中已经添加过了前缀和后缀
+        mv.setViewName("/index.jsp");//在视图解析器中已经添加过了前缀和后缀
 
-        return  mv;
-    }
-
-
-    @RequestMapping(value = {"/other.do", "/second.do"}, method = RequestMethod.POST)//添加method方法限制Url请求必须是post
-    public ModelAndView doOther(){
-        ModelAndView mv = new ModelAndView();
-        mv.addObject("msg", "欢迎");
-        mv.addObject("fun", "执行doOther");
-        mv.setViewName("show");//在视图解析器中已经添加过了前缀和后缀
         return  mv;
     }
 }
